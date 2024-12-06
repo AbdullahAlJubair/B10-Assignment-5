@@ -30,9 +30,9 @@
 </head>
 
 <body class="font-Lexend">
-    <header class="container mx-auto mb-20">
+    <header class="container mx-auto sticky top-0 bg-base-100 z-10">
         <!-- Navbar -->
-        <nav class="navbar bg-header-bg py-6 px-4 flex-wrap md:flex-nowrap">
+        <nav class="navbar bg-header-bg py-6 px-4 flex-wrap md:flex-nowrap  mb-20">
             <div class="navbar-start order-3 md:order-1">
                 <button class="btn text-base md:text-xl font-semibold bg-Accent ml-auto md:ml-0">Blog</button>
             </div>
@@ -44,11 +44,198 @@
             </div>
             <div class="navbar-end gap-3 order-2 md:order-3">
                 <img src="./assets/coin.png" alt="">
-                <p class="text-xl font-medium text-gray-500 mr-auto md:mr-0"><span>5500</span>BDT</p>
+                <p class="text-xl font-medium text-gray-500 mr-auto md:mr-0"><span id="mainBalance">5500</span> BDT</p>
             </div>
         </nav>
+        <!-- Tab Button Container -->
+        <section class="w-fit mx-auto space-x-4 pb-8">
+            <button id="donateTabBtn" onclick="donateTab()"
+                class="btn text-base md:text-xl font-semibold bg-Accent hover:bg-Accent border-gray-200">Donation</button>
+            <button id="historyTabBtn" onclick="historyTab()"
+                class="btn text-base md:text-xl font-semibold bg-transparent hover:bg-transparent border-gray-200">History</button>
+        </section>
     </header>
-    <main>
+    <main class="container mx-auto">
+
+        <!-- Tab Container -->
+        <section id="donation-container">
+            <!-------------------------------- Card-1 ------------------------------------>
+            <div class="card items-center gap-8 lg:card-side border p-2 md:p-8 mx-2">
+                <!-- Card Image -->
+                <figure class="w-full lg:w-1/2">
+                    <img class="w-full rounded-2xl" src="./assets/noakhali.png" alt="Donate for Flood at Noakhali, Bangladesh" />
+                </figure>
+                <!-- Card Body -->
+                <div class="w-full lg:w-1/2 space-y-4">
+                    <!-- Card Price and Icon -->
+                    <div class="inline-flex w-fit justify-between gap-2 bg-gray-100 py-3 px-4 rounded-lg">
+                        <img class="w-6 h-6" src="./assets/coin.png" alt="">
+                        <p class="text-base font-normal text-gray-700 mr-auto md:mr-0">
+                            <span>0</span> BDT
+                        </p>
+                    </div>
+                    <!-- Card Title -->
+                    <h2 class="card-title text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h2>
+                    <p class="text-base font-light text-gray-500"> The recent floods in Noakhali have caused significant
+                        damage to homes infrastructure. Your donation will help provide essential supplies and to those
+                        affected by this disaster. Every contribution, big or small, makes difference. Please join us in
+                        supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                    <div> <!-- Card Input -->
+                        <input type="text" placeholder="Write Donation Amount"
+                            class="w-full input input-bordered mt-2" />
+                    </div>
+                    <!-- Card Button -->
+                    <button id="donateBtn"
+                        class="donateBtn btn w-full text-base md:text-xl font-semibold bg-Accent hover:bg-Accent">Donate
+                        Now</button>
+                </div>
+            </div>
+            <!-------------------------------- Card-2 ------------------------------------>
+            <div class="card items-center gap-8 lg:card-side border p-2 md:p-8 mx-2">
+                <!-- Card Image -->
+                <figure class="w-full lg:w-1/2">
+                    <img class="w-full rounded-2xl" src="./assets/feni.png" alt="Donate for Flood Relief in Feni,Bangladesh" />
+                </figure>
+                <!-- Card Body -->
+                <div class="w-full lg:w-1/2 space-y-4">
+                    <!-- Card Price and Icon -->
+                    <div class="inline-flex w-fit justify-between gap-2 bg-gray-100 py-3 px-4 rounded-lg">
+                        <img class="w-6 h-6" src="./assets/coin.png" alt="">
+                        <p class="text-base font-normal text-gray-700 mr-auto md:mr-0">
+                            <span>600</span> BDT
+                        </p>
+                    </div>
+                    <!-- Card Title -->
+                    <h2 class="card-title text-xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h2>
+                    <p class="text-base font-light text-gray-500">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+                    <div> <!-- Card Input -->
+                        <input type="text" placeholder="Write Donation Amount"
+                            class="w-full input input-bordered mt-2" />
+                    </div>
+                    <!-- Card Button -->
+                    <button
+                        class="donateBtn btn w-full text-base md:text-xl font-semibold bg-Accent hover:bg-Accent">Donate
+                        Now</button>
+                </div>
+            </div>
+            <!-------------------------------- Card-3 ------------------------------------>
+            <div class="card items-center gap-8 lg:card-side border p-2 md:p-8 mx-2">
+                <!-- Card Image -->
+                <figure class="w-full lg:w-1/2">
+                    <img class="w-full rounded-2xl" src="./assets/quota-protest.png" alt="Aid for Injured in the Quota Movement" />
+                </figure>
+                <!-- Card Body -->
+                <div class="w-full lg:w-1/2 space-y-4">
+                    <!-- Card Price and Icon -->
+                    <div class="inline-flex w-fit justify-between gap-2 bg-gray-100 py-3 px-4 rounded-lg">
+                        <img class="w-6 h-6" src="./assets/coin.png" alt="">
+                        <p class="text-base font-normal text-gray-700 mr-auto md:mr-0">
+                            <span>2400</span> BDT
+                        </p>
+                    </div>
+                    <!-- Card Title -->
+                    <h2 class="card-title text-xl font-bold">Aid for Injured in the Quota Movement</h2>
+                    <p class="text-base font-light text-gray-500">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+                    <div> <!-- Card Input -->
+                        <input type="text" placeholder="Write Donation Amount"
+                            class="w-full input input-bordered mt-2" />
+                    </div>
+                    <!-- Card Button -->
+                    <button
+                        class="donateBtn btn w-full text-base md:text-xl font-semibold bg-Accent hover:bg-Accent">Donate
+                        Now</button>
+                </div>
+            </div>
+            <!-------------------------------- Card-4 ------------------------------------>
+            <div class="card items-center gap-8 lg:card-side border p-2 md:p-8 mx-2">
+                <!-- Card Image -->
+                <figure class="w-full lg:w-1/2">
+                    <img class="w-full rounded-2xl" src="./assets/cyclone.jpg" alt="Support Cyclone Victims in Chattogram" />
+                </figure>
+                <!-- Card Body -->
+                <div class="w-full lg:w-1/2 space-y-4">
+                    <!-- Card Price and Icon -->
+                    <div class="inline-flex w-fit justify-between gap-2 bg-gray-100 py-3 px-4 rounded-lg">
+                        <img class="w-6 h-6" src="./assets/coin.png" alt="">
+                        <p class="text-base font-normal text-gray-700 mr-auto md:mr-0">
+                            <span>2400</span> BDT
+                        </p>
+                    </div>
+                    <!-- Card Title -->
+                    <h2 class="card-title text-xl font-bold">Support Cyclone Victims in Chattogram, Bangladesh</h2>
+                    <p class="text-base font-light text-gray-500">The devastating cyclone in Chattogram has left countless families without shelter, food, and basic necessities. Your donation can provide life-saving relief, including temporary housing, clean water, and emergency supplies. Together, we can bring hope to those affected by this natural disaster. Every contribution, no matter the size, makes a difference. Please stand with us to rebuild lives and restore hope.</p>
+                    <div> <!-- Card Input -->
+                        <input type="text" placeholder="Write Donation Amount"
+                            class="w-full input input-bordered mt-2" />
+                    </div>
+                    <!-- Card Button -->
+                    <button
+                        class="donateBtn btn w-full text-base md:text-xl font-semibold bg-Accent hover:bg-Accent">Donate
+                        Now</button>
+                </div>
+            </div>
+            <!-------------------------------- Card-5 ------------------------------------>
+            <div class="card items-center gap-8 lg:card-side border p-2 md:p-8 mx-2">
+                <!-- Card Image -->
+                <figure class="w-full lg:w-1/2">
+                    <img class="w-full rounded-2xl" src="./assets/refugees.jpg" alt="Donate for Rohingya Refugees in Cox's Bazar, Bangladesh" />
+                </figure>
+                <!-- Card Body -->
+                <div class="w-full lg:w-1/2 space-y-4">
+                    <!-- Card Price and Icon -->
+                    <div class="inline-flex w-fit justify-between gap-2 bg-gray-100 py-3 px-4 rounded-lg">
+                        <img class="w-6 h-6" src="./assets/coin.png" alt="">
+                        <p class="text-base font-normal text-gray-700 mr-auto md:mr-0">
+                            <span>2400</span> BDT
+                        </p>
+                    </div>
+                    <!-- Card Title -->
+                    <h2 class="card-title text-xl font-bold">Donate for Rohingya Refugees in Cox's Bazar, Bangladesh</h2>
+                    <p class="text-base font-light text-gray-500">The Rohingya refugee crisis continues to challenge the resources and resilience of Cox's Bazar. Thousands of refugees urgently need food, medical care, and educational support. Your generous donation can offer vital assistance to those struggling to survive in harsh conditions. Join us in extending a helping hand to bring stability and hope to the Rohingya community. Every donation makes a tangible impact on their lives.</p>
+                    <div> <!-- Card Input -->
+                        <input type="text" placeholder="Write Donation Amount"
+                            class="w-full input input-bordered mt-2" />
+                    </div>
+                    <!-- Card Button -->
+                    <button
+                        class="donateBtn btn w-full text-base md:text-xl font-semibold bg-Accent hover:bg-Accent">Donate
+                        Now</button>
+                </div>
+            </div>
+            <!-------------------------------- Card-6 ------------------------------------>
+            <div class="card items-center gap-8 lg:card-side border p-2 md:p-8 mx-2">
+                <!-- Card Image -->
+                <figure class="w-full lg:w-1/2">
+                    <img class="w-full rounded-2xl" src="./assets/fire-victims.jpg" alt="Relief for Fire Victims in Dhaka Slums, Bangladesh" />
+                </figure>
+                <!-- Card Body -->
+                <div class="w-full lg:w-1/2 space-y-4">
+                    <!-- Card Price and Icon -->
+                    <div class="inline-flex w-fit justify-between gap-2 bg-gray-100 py-3 px-4 rounded-lg">
+                        <img class="w-6 h-6" src="./assets/coin.png" alt="">
+                        <p class="text-base font-normal text-gray-700 mr-auto md:mr-0">
+                            <span>2400</span> BDT
+                        </p>
+                    </div>
+                    <!-- Card Title -->
+                    <h2 class="card-title text-xl font-bold">Relief for Fire Victims in Dhaka Slums, Bangladesh</h2>
+                    <p class="text-base font-light text-gray-500">A tragic fire has destroyed homes and livelihoods in the slums of Dhaka, leaving families with nothing. Your support can provide essential aid such as clothing, food, and housing materials to help them recover from this tragedy. Together, we can ensure that these vulnerable communities receive the assistance they need to rebuild their lives. Please consider donating today to make a meaningful difference.</p>
+                    <div> <!-- Card Input -->
+                        <input type="text" placeholder="Write Donation Amount"
+                            class="w-full input input-bordered mt-2" />
+                    </div>
+                    <!-- Card Button -->
+                    <button
+                        class="donateBtn btn w-full text-base md:text-xl font-semibold bg-Accent hover:bg-Accent">Donate
+                        Now</button>
+                </div>
+            </div>
+        </section>
+        <!-- History Container -->
+        <section id="history-container" class="hidden">
+            <p>I am history-container</p>
+        </section>
+
 
     </main>
     <footer>
