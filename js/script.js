@@ -1,3 +1,4 @@
+//Donate Tab Button Function
 function donateTab() {
     document.getElementById('donateTabBtn').classList.add('bg-Accent', 'hover:bg-Accent');
     document.getElementById('historyTabBtn').classList.remove('bg-Accent', 'hover:bg-Accent');
@@ -6,6 +7,7 @@ function donateTab() {
     document.getElementById('donation-container').classList.remove('hidden');
 
 }
+//History Tab Button Function
 function historyTab() {
     document.getElementById('historyTabBtn').classList.remove('bg-transparent', 'hover:bg-transparent');
     document.getElementById('historyTabBtn').classList.add('bg-Accent', 'hover:bg-Accent');
@@ -15,7 +17,7 @@ function historyTab() {
     document.getElementById('history-container').classList.remove('hidden');
 }
 
-
+//Donate Buttons Functionality for All Card
 let cards = document.querySelectorAll('.donateBtn');
 for (const card of cards) {
     card.addEventListener('click', function () {
@@ -54,6 +56,7 @@ for (const card of cards) {
     })
 }
 
+//Get History Data by Function and Setting Data for History Layout
 function history(amount, title) {
     const section = document.getElementById('history-container');
     const div = document.createElement('div');
