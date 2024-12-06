@@ -19,6 +19,9 @@ function historyTab() {
 let cards = document.querySelectorAll('.donateBtn');
 for (const card of cards) {
     card.addEventListener('click', function () {
+        //Card Title
+        const cardTitle = this.parentElement.children[1].innerText;
+
         // Card Old Amount
         const oldDonationAmount = this.parentElement.children[0].children[1].children[0];
         const oldDonation = Number(oldDonationAmount.innerText);
@@ -47,6 +50,18 @@ for (const card of cards) {
 
         inputDonationAmount.value = '';
         document.getElementById('my_modal_1').showModal()
+        history(inputDonation, cardTitle)
     })
 }
 
+function history(amount, title) {
+    const section = document.getElementById('history-container');
+    const div = document.createElement('div');
+    div.classList.add('border', 'rounded-xl', 'p-2', 'md:p-8', 'mx-2', 'space-y-4');
+    div.innerHTML = `
+        <h3 class="text-xl font-bold">${amount} Taka is Donated for ${title}</h3>
+        <p class="text-base font-light text-gray-500">Date : ${Date()}</p>
+    `
+    section.appendChild(div);
+    console.log(section.this);
+}
