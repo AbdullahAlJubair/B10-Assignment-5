@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Quest Build and Manipulate</title>
+    <title>Home | DOM Quest Build and Manipulate</title>
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
     <!-- Daisy UI and Tailwind CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -35,7 +35,7 @@
         <!-- Navbar -->
         <nav class="navbar bg-header-bg py-2 px-2 md:py-6 md:px-4 flex-wrap md:flex-nowrap mb-2 md:mb-5">
             <div class="navbar-start order-3 md:order-1">
-                <button class="btn text-sm md:text-xl font-semibold bg-Accent hover:bg-Accent border-0 md:px-4 ml-auto md:ml-0">Blog</button>
+                <button id="blogBtn" class="btn text-sm md:text-xl font-semibold bg-Accent hover:bg-Accent border-0 md:px-4 ml-auto md:ml-0">Blog</button>
             </div>
             <div class="navbar-center order-1 md:order-2 mb-3 md:mb-0 mx-auto">
                 <a class="flex items-center gap-4">
@@ -45,7 +45,7 @@
             </div>
             <div class="navbar-end gap-1 md:gap-3 order-2 md:order-3">
                 <img class="w-6 h-6 md:w-7 md:h-7" src="./assets/coin.png" alt="">
-                <p class="text-lg md:text-xl font-medium text-gray-500 mr-auto md:mr-0"><span id="mainBalance">5500</span> BDT</p>
+                <p class="text-lg md:text-xl font-medium text-gray-500 mr-auto md:mr-0"><span id="mainBalance">25516</span> BDT</p>
             </div>
         </nav>
         <!-- Tab Button Container -->
@@ -259,6 +259,13 @@
     </footer>
 
     <script src="./js/script.js"></script>
+
+    <!-- Blog button link added by JS -->
+    <script>
+        document.getElementById('blogBtn').addEventListener('click', function(){
+            window.location.href = "./blog.html";
+        })
+    </script>
 </body>
 
 </html>
