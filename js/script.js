@@ -57,9 +57,9 @@ for (const card of cards) {
 function history(amount, title) {
     const section = document.getElementById('history-container');
     const div = document.createElement('div');
-    div.classList.add('border', 'rounded-xl', 'p-2', 'md:p-8', 'mx-2', 'space-y-4');
+    div.classList.add('border', 'rounded-xl', 'p-4', 'md:p-8', 'mx-2', 'space-y-4');
     div.innerHTML = `
-        <h3 class="text-xl font-bold">${amount} Taka is Donated for ${title}</h3>
+        <h3 class="text-lg md:text-xl font-bold">${amount} Taka is Donated for ${title}</h3>
         <p class="text-base font-light text-gray-500">Date : ${Date()}</p>
     `
     section.appendChild(div);
