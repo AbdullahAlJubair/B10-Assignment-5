@@ -4,13 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM Quest Build and Manipulate</title>
     <!-- Daisy UI and Tailwind CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'Accent': '#B4F461',
+                        'header-bg': '#F9F7F3',
+                    },
+                    fontFamily: {
+                        'Lexend': ['Lexend', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body class="font-Lexend">
+    <header class="container mx-auto mb-20">
+        <!-- Navbar -->
+        <nav class="navbar bg-header-bg py-6 px-4 flex-wrap md:flex-nowrap">
+            <div class="navbar-start order-3 md:order-1">
+                <button class="btn text-base md:text-xl font-semibold bg-Accent ml-auto md:ml-0">Blog</button>
+            </div>
+            <div class="navbar-center order-1 md:order-2 mb-4 md:mb-0 mx-auto">
+                <a class="flex items-center gap-4">
+                    <img class="w-8 h-8 md:h-12 md:w-12" src="./assets/logo.png" alt="">
+                    <h1 class="text-xl font-semibold text-black">Donate Bangladesh</h1>
+                </a>
+            </div>
+            <div class="navbar-end gap-3 order-2 md:order-3">
+                <img src="./assets/coin.png" alt="">
+                <p class="text-xl font-medium text-gray-500 mr-auto md:mr-0"><span>5500</span>BDT</p>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
 
 </body>
 
